@@ -14,6 +14,7 @@ use Mix.Config
 config :chat, Chat.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "localhost", port: 80],
+  check_origin: false,
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production

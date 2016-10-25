@@ -25,9 +25,13 @@
         <websocket type="connect" path="/socket/websocket?user=tsung%%ts_user_server:get_unique_id%%"></websocket>
       </request>
 
-      <request>
+      <setdynvars sourcetype="random_number" start="1" end="100">
+        <var name="room"/>
+      </setdynvars>
+
+      <request subst="true">
         <websocket type="message">
-          {"topic":"room:test", "event":"phx_join", "payload": {}, "ref":"1"}
+          {"topic":"room:test%%_room%%", "event":"phx_join", "payload": {}, "ref":"1"}
         </websocket>
       </request>
 
