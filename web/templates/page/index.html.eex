@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Shitty chat app</h1>
+    <p>Join now!</p>
+
+    <%= form_for @conn, page_path(@conn, :join), [as: :chat, class: "form-inline"], fn f -> %>
+      <div class="form-group form-group-lg">
+        <%= text_input f, :user, class: "form-control", placeholder: "User name...", required: true %>
+      </div>
+
+      <div class="input-group input-group-lg">
+        <%= text_input f, :room, class: "form-control", placeholder: "Room name...", required: true %>
+        <span class="input-group-btn">
+          <%= submit "Join", class: "btn btn-primary" %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
